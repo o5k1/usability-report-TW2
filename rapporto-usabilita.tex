@@ -1,0 +1,81 @@
+\documentclass{article}
+\usepackage{leaf}
+
+\usepackage{afterpage}
+
+\newcommand\blankpage{%
+    \null
+
+    \newpage}
+
+\titlepage{}
+
+\author{Andrea Tombolato}
+\date{Giugno 2016}
+\fancypagestyle{myfrontrel}{
+		\hypersetup{
+				colorlinks=true,
+				linkcolor=black,
+		}
+		\pagenumbering{Roman}
+		\fancyhf{}
+		\lhead{Andrea Tombolato}
+		\rhead{Rapporto di usabilità}
+		\cfoot{\thepage~di \pageref{LastFrontPage}}
+		\renewcommand{\headrulewidth}{0.4pt}
+		\renewcommand{\footrulewidth}{0.4pt}
+	}
+\fancypagestyle{myrel}{
+		\hypersetup{
+				colorlinks=true,
+				linkcolor=blue,
+				anchorcolor=black,
+				citecolor=black,
+				urlcolor=blue,
+		}
+		\pagenumbering{arabic}
+		\fancyhf{}
+		\lhead{Andrea Tombolato}
+		\rhead{Rapporto di usabilità}
+		\cfoot{
+			\hypersetup{
+				colorlinks=true,
+				linkcolor=black,
+			}
+			\thepage~di \pageref{LastPage}
+		}
+		\renewcommand{\headrulewidth}{0.4pt}
+		\renewcommand{\footrulewidth}{0.4pt}
+	}
+\pagenumbering{gobble}
+\begin{document}
+	\begin{titlepage}
+		\centering
+	{\huge\bfseries Rapporto di usabilità \par}
+
+	\line(1,0){350} \\
+	{\scshape\LARGE Tecnologie Web 2 \par}
+	\vspace{2cm}
+	\begin{tabular}{c|c}
+		{\hfill\textbf{Data analisi}} 		& Giugno 2016  		\\ 
+		{\hfill\textbf{Autore}} 		& Andrea Tombolato \\
+		{\hfill\textbf{Matricola}} 		& 1069144  		\\ 
+		{\hfill\textbf{URL sito}} 			& \url{http://www.thepuppyranch.com/} \\ 
+	\end{tabular}
+	\end{titlepage}
+\newpage
+	\pagestyle{myfrontrel}
+	\tableofcontents
+	\label{LastFrontPage}
+\newpage
+	\pagestyle{myrel}
+	\subfile{sections/scopoDocumento}
+\newpage
+	\subfile{sections/risultati}
+\newpage
+	\subfile{sections/conclusioni}
+\newpage
+	\subfile{sections/listaFigure}
+
+\label{LastPage}
+\end{document}
